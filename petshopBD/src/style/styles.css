@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #FCFDFB; /* Baby Powder */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  background-color: #00BFAD; /* Keppel */
+  color: #FCFDFB; /* Baby Powder */
+  padding: 20px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: center; /* Centraliza todo o conteúdo do cabeçalho */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 2px solid #FCFDFB;
+  margin-left: 30px;
+}
+
+.page-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 5px; /* Espaço entre os títulos */
+}
+
+/* Adicionando estilo para o botão SQL */
+.sql-button {
+  background-color: #564B8F; /* Ultra Violet */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-left: 20px; /* Espaçamento entre a logo e o botão */
+  transition: background-color 0.3s;
+}
+
+.sql-button:hover {
+  background-color: #473A75; /* Cor mais escura no hover */
+}
+
+/* Estilo para o card-container */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.flip-card {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  perspective: 1000px;
+  transition: transform 0.3s ease;
+}
+
+.flip-card:hover {
+  transform: scale(1.05);
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.flip-card.clicked .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  border: 3px solid #C1BCDC;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card-front {
+  background: #FCFDFB;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+.title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #564B8F; /* Ultra Violet */
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.flip-card-back {
+  background: #C1BCDC;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);
+  padding: 20px;
+}
+
+.back-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff; /* Ultra Violet */
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.back-option {
+  font-family: monospace;
+  background-color: #00BFAD; /* Keppel */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-option:hover {
+  background-color: #009F8A;
+}

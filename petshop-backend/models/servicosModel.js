@@ -6,7 +6,7 @@ const Servicos = {
     getAll: () => db.query('SELECT * FROM servicos'),
     
     // Recuperar um serviço por ID
-    getById: (id) => db.query('SELECT * FROM servicos WHERE id_servico = ?', [id]),
+    getById: (id) => db.query('SELECT * FROM servicos WHERE id = ?', [id]),
 
     // Criar um novo serviço
     create: (data) =>
@@ -18,12 +18,12 @@ const Servicos = {
     // Atualizar um serviço
     update: (id, data) =>
         db.query(
-            'UPDATE servicos SET nome = ?, descricao = ?, preco = ? WHERE id_servico = ?',
+            'UPDATE servicos SET nome = ?, descricao = ?, preco = ? WHERE id = ?',
             [data.nome, data.descricao, data.preco, id]
         ),
 
     // Deletar um serviço
-    delete: (id) => db.query('DELETE FROM servicos WHERE id_servico = ?', [id]),
+    delete: (id) => db.query('DELETE FROM servicos WHERE id = ?', [id]),
 };
 
 module.exports = Servicos;

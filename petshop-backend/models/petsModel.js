@@ -6,7 +6,7 @@ const Pets = {
     getAll: () => db.query('SELECT * FROM pets'),
     
     // Recuperar um pet por ID
-    getById: (id) => db.query('SELECT * FROM pets WHERE id_pet = ?', [id]),
+    getById: (id) => db.query('SELECT * FROM pets WHERE id = ?', [id]),
 
     // Criar um novo pet
     create: (data) =>
@@ -18,12 +18,12 @@ const Pets = {
     // Atualizar um pet
     update: (id, data) =>
         db.query(
-            'UPDATE pets SET nome = ?, especie = ?, raca = ?, idade = ?, id_cliente = ? WHERE id_pet = ?',
+            'UPDATE pets SET nome = ?, especie = ?, raca = ?, idade = ?, id_cliente = ? WHERE id = ?',
             [data.nome, data.especie, data.raca, data.idade, data.id_cliente, id]
         ),
 
     // Deletar um pet
-    delete: (id) => db.query('DELETE FROM pets WHERE id_pet = ?', [id]),
+    delete: (id) => db.query('DELETE FROM pets WHERE id = ?', [id]),
 };
 
 module.exports = Pets;

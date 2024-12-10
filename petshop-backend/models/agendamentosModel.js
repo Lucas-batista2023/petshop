@@ -4,9 +4,9 @@ const db = require('../database/db');
 const Agendamentos = {
     // Recuperar todos os agendamentos
     getAll: () => db.query('SELECT * FROM agendamentos'),
-    
+
     // Recuperar um agendamento por ID
-    getById: (id) => db.query('SELECT * FROM agendamentos WHERE id_agendamento = ?', [id]),
+    getById: (id) => db.query('SELECT * FROM agendamentos WHERE id = ?', [id]),  // Alterado para 'id'
 
     // Criar um novo agendamento
     create: (data) =>
@@ -16,14 +16,28 @@ const Agendamentos = {
         ),
 
     // Atualizar um agendamento
-    update: (id, data) =>
-        db.query(
-            'UPDATE agendamentos SET data = ?, id_cliente = ?, id_servico = ?, status = ? WHERE id_agendamento = ?',
-            [data.data, data.id_cliente, data.id_servico, data.status, id]
-        ),
+    update: (id, data) => {
+        console.log('Dados recebidos no backend:', data);  // Verificando os dados recebidos
+        return db.query(
+            'UPDATE agendamentos SET data = ?, id_cliente = ?, id_servico = ?, status = ? WHERE id = ?',  // Alterado para 'id'
+            [data.data, data.id_cliente, data.id_servico, data.status, id]  // Alterado para 'id'
+        );
+    },
 
     // Deletar um agendamento
-    delete: (id) => db.query('DELETE FROM agendamentos WHERE id_agendamento = ?', [id]),
+    delete: (id) => {
+        return db.query('DELETE FROM agendamentos WHERE id = ?', [id])  // Alterado para 'id'
+            .then(result => {
+                if (result.affectedRows === 0) {
+                    throw new Error('Agendamento não encontrado');
+                }
+                return result;
+            })
+            .catch(error => {
+                console.error('Erro ao deletar agendamento:', error);
+                throw error;
+            });
+    },
 };
 
 module.exports = Agendamentos;

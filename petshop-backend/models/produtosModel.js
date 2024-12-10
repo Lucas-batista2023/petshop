@@ -6,7 +6,7 @@ const Produtos = {
     getAll: () => db.query('SELECT * FROM produtos'),
     
     // Recuperar um produto por ID
-    getById: (id) => db.query('SELECT * FROM produtos WHERE id_produto = ?', [id]),
+    getById: (id) => db.query('SELECT * FROM produtos WHERE id = ?', [id]),
 
     // Criar um novo produto
     create: (data) =>
@@ -18,12 +18,12 @@ const Produtos = {
     // Atualizar um produto
     update: (id, data) =>
         db.query(
-            'UPDATE produtos SET nome = ?, descricao = ?, preco = ?, estoque = ? WHERE id_produto = ?',
+            'UPDATE produtos SET nome = ?, descricao = ?, preco = ?, estoque = ? WHERE id = ?',
             [data.nome, data.descricao, data.preco, data.estoque, id]
         ),
 
     // Deletar um produto
-    delete: (id) => db.query('DELETE FROM produtos WHERE id_produto = ?', [id]),
+    delete: (id) => db.query('DELETE FROM produtos WHERE id = ?', [id]),
 };
 
 module.exports = Produtos;

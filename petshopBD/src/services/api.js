@@ -5,6 +5,7 @@ const api = axios.create({
   baseURL: 'http://localhost:3006', // Endereço do seu back-end
 });
 
+
 // Funções auxiliares para cada rota
 
 // Agendamentos

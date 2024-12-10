@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FCFDFB; /* Baby Powder */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    color: #564B8F; /* Ultra Violet */
+    margin: 20px 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  ul {
+    list-style-type: none;
+    width: 90%;
+    max-width: 1200px;
+    padding: 0;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  li {
+    background: #ffffff; /* White */
+    border: 1px solid #C1BCDC; /* Lavanda */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  li strong {
+    color: #564B8F; /* Ultra Violet */
+    font-weight: bold;
+  }
+  
+  li br {
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-family: 'Poppins', sans-serif;
+    color: red;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .actions {
+    margin-top: 10px;
+}
+
+.delete-button, .update-button {
+    padding: 8px 12px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.delete-button {
+    background-color: #e74c3c; /* Vermelho */
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}
+
+.update-button {
+    background-color: #3498db; /* Azul */
+}
+
+.update-button:hover {
+    background-color: #2980b9;
+}
+
+  

@@ -6,7 +6,7 @@ const ItensVenda = {
     getAll: () => db.query('SELECT * FROM itensvenda'),
 
     // Recuperar um item de venda por ID
-    getById: (id) => db.query('SELECT * FROM itensvenda WHERE id_item = ?', [id]),
+    getById: (id) => db.query('SELECT * FROM itensvenda WHERE id = ?', [id]),
 
     // Criar um novo item de venda
     create: (data) =>
@@ -18,12 +18,12 @@ const ItensVenda = {
     // Atualizar um item de venda
     update: (id, data) =>
         db.query(
-            'UPDATE itensvenda SET id_venda = ?, id_produto = ?, quantidade = ?, preco_unitario = ? WHERE id_item = ?',
+            'UPDATE itensvenda SET id_venda = ?, id_produto = ?, quantidade = ?, preco_unitario = ? WHERE id = ?',
             [data.id_venda, data.id_produto, data.quantidade, data.preco_unitario, id]
         ),
 
     // Deletar um item de venda
-    delete: (id) => db.query('DELETE FROM itensvenda WHERE id_item = ?', [id]),
+    delete: (id) => db.query('DELETE FROM itensvenda WHERE id = ?', [id]),
 };
 
 module.exports = ItensVenda;

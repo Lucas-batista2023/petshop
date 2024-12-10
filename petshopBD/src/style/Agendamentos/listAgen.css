@@ -1,0 +1,118 @@
+/* Estilos globais */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #CDCAE3;
+  color: #1a1919;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1, h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  color: #564B8F;
+  font-weight: 900;
+  margin: 20px 0;
+  text-align: center;
+}
+
+/* Tabelas */
+.table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(244, 247, 251) 100%);
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table thead th {
+  background-color: #6458af;
+  color: white;
+  padding: 10px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  border: 2px solid #4A4A4A;
+}
+
+.table tbody td {
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  border: 1px solid #ddd;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #EDEAF6;
+}
+
+.table tbody tr:hover {
+  background-color: #C6C4DD;
+}
+
+/* Coluna de Ações */
+.table tbody td:last-child {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Botões */
+.btn {
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-excluir {
+  background-color: #DC3545;
+  color: white;
+}
+
+.btn-excluir:hover {
+  transform: scale(1.03);
+  background-color: #C82333;
+}
+
+.btn-excluir:active {
+  transform: scale(0.95);
+  box-shadow: rgba(133, 189, 215, 0.6) 0px 10px 10px -5px;
+}
+
+.btn-editar {
+  background-color: #00BFAD;
+  color: white;
+}
+
+.btn-editar:hover {
+  background-color: #009F8A;
+}
+
+.btn-editar:active {
+  transform: scale(0.95);
+  box-shadow: rgba(133, 189, 215, 0.6) 0px 10px 10px -5px;
+}
+
+/* Alertas */
+.alert {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}

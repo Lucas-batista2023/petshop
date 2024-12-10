@@ -1,6 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
+const bodyParser = require('body-parser'); // ADICIONADO
 
 // Configuração do dotenv
 dotenv.config();
@@ -18,7 +19,7 @@ const corsOptions = {
 app.use(express.json());
 app.use(cors(corsOptions)); // Aplicando as opções de CORS
 
-// Rotas
+// Rotas de Recursos
 app.use('/agendamentos', require('./routes/agendamentosRoutes'));
 app.use('/clientes', require('./routes/clientesRoutes'));
 app.use('/servicos', require('./routes/servicosRoutes'));
@@ -26,9 +27,10 @@ app.use('/veterinarios', require('./routes/veterinariosRoutes'));
 app.use('/vendas', require('./routes/vendasRoutes'));
 app.use('/produtos', require('./routes/produtosRoutes'));
 app.use('/pets', require('./routes/petsRoutes'));
-app.use('/itens-venda', require('./routes/itensVendaRoutes'));
+app.use('/itensvenda', require('./routes/itensVendaRoutes')); // Modifiquei
 app.use('/funcionarios', require('./routes/funcionariosRoutes'));
 app.use('/consultas', require('./routes/consultasRoutes'));
+app.use('/users', require('./routes/usersRoutes')); // Adicionado para as rotas de usuários
 
 // Porta do Servidor
 const PORT = process.env.PORT || 3006;

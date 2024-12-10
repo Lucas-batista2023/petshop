@@ -6,7 +6,7 @@ const Veterinarios = {
     getAll: () => db.query('SELECT * FROM veterinarios'),
     
     // Recuperar um veterinário por ID
-    getById: (id) => db.query('SELECT * FROM veterinarios WHERE id_veterinario = ?', [id]),
+    getById: (id) => db.query('SELECT * FROM veterinarios WHERE id = ?', [id]),
 
     // Criar um novo veterinário
     create: (data) =>
@@ -18,12 +18,12 @@ const Veterinarios = {
     // Atualizar um veterinário
     update: (id, data) =>
         db.query(
-            'UPDATE veterinarios SET nome = ?, especialidade = ?, telefone = ?, email = ? WHERE id_veterinario = ?',
+            'UPDATE veterinarios SET nome = ?, especialidade = ?, telefone = ?, email = ? WHERE id = ?',
             [data.nome, data.especialidade, data.telefone, data.email, id]
         ),
 
     // Deletar um veterinário
-    delete: (id) => db.query('DELETE FROM veterinarios WHERE id_veterinario = ?', [id]),
+    delete: (id) => db.query('DELETE FROM veterinarios WHERE id = ?', [id]),
 };
 
 module.exports = Veterinarios;

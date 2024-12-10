@@ -1,0 +1,149 @@
+/* Estilos gerais do corpo */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 20px;
+  }
+  
+  /* Estilo do container principal */
+  .container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Título */
+  h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #4a4a4a;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo das mensagens de sucesso e erro */
+  p {
+    font-size: 1rem;
+    text-align: center;
+    color: #4a4a4a;
+    margin-bottom: 15px;
+  }
+  
+  p.success {
+    color: green;
+  }
+  
+  p.error {
+    color: red;
+  }
+  
+  /* Estilo da lista de consultas */
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul li {
+    background-color: #fff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  ul li strong {
+    color: #4a4a4a;
+  }
+  
+  /* Estilo das ações (botões) */
+  .actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button.delete-button {
+    background-color: #f44336; /* Vermelho */
+    color: white;
+  }
+  
+  button.delete-button:hover {
+    background-color: #e53935;
+  }
+  
+  button.delete-button:active {
+    transform: scale(0.98);
+  }
+  
+  button.update-button {
+    background-color: #6458af; /* Azul */
+    color: white;
+  }
+  
+  button.update-button:hover {
+    background-color: #3e48b1;
+  }
+  
+  button.update-button:active {
+    transform: scale(0.98);
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+  
+    h2 {
+      font-size: 24px;
+    }
+  
+    ul li {
+      padding: 12px;
+    }
+  
+    button {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 10px;
+    }
+  
+    h2 {
+      font-size: 20px;
+    }
+  
+    ul li {
+      padding: 10px;
+    }
+  
+    button {
+      font-size: 0.8rem;
+      padding: 6px 14px;
+    }
+  }
+  
